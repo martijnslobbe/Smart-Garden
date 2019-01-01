@@ -7,7 +7,7 @@ Going to include:
 - ventilation system
 
 All equipment will be used efficiently, saving its lifespan.
-An RTC breakout board will be used to time control the system.
+A RTC breakout board will be used to time control the system.
 
 Parts used up until now:
  - Arduino Uno (REV 3)
