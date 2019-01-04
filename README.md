@@ -12,7 +12,7 @@ All equipment will be used efficiently, saving its lifespan.
 A RTC breakout board will be used to time control the system.
 
 
-Parts used up until now:
+Components used up until now:
  - Arduino Uno (REV 3)
  - Real Time Clock (Adafruit DS3231
  - Photoresistor (Light Dependent Resistor)
@@ -25,6 +25,8 @@ Parts used up until now:
 
 
 Functiosn of the components:
+ - The Arduino Uno is a microcontroller board The Arduino Uno is a microcontroller board based on the ATmega328.
+ It has 14 digital - and 6 analog I/O pins. It will act as the brains of this project. The board will controll equipment based on analog and digital inputs from sensors. 
  - The Real Time Clock breakout board is a low-cost, extremely accurate I2C real-time clock (RTC).
  The device incorporates a battery input, and maintains accurate timekeeping when main power to the device is interrupted.
  - The Photoresistor is an electrical component whose resistance is influenced by the amount of light.
