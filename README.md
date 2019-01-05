@@ -18,6 +18,8 @@ Components used up until now:
  - Photoresistor (Light Dependent Resistor)
  - GROW Led Strip (5050 LED Strip DC12V 3:1)
  - Soil moisture sensor (FC-28)
+ - Micro switch
+ - 10 K ohm resistor
  - 4 Channel relay module (2PH63083A)
  - Water pump (Makeblock 50200)
  - Jumper wires
@@ -37,5 +39,9 @@ Functiosn of the components:
  In this project, the relay switches the power to a water pump on or off.
  - The FC-28 soil moisture sensor measures the moisture in soil and similar materials. 
  It acts as an variable resistor.
+ - The micro switch is a switch that let's trough current when it is pressed.
+ In the project it's job is to make sure that nothing happens when the water resevoir is emptry.
+ A floating weight will hang on the switch when the water tank is empty, thus pressing in the switch.
+  The 10 K ohm resistor has a constant resistance of 10 kilo ohm.
  - The Makeblock 50200 water pump is used to transport the water from a resevoir to it's destination.
  Since this water pump uses 12 VDC and an arduino cannot handle this much power, a relay is used as an on/of switch.
