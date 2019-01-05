@@ -42,6 +42,6 @@ Functiosn of the components:
  - The micro switch is a switch that let's trough current when it is pressed.
  In the project it's job is to make sure that nothing happens when the water resevoir is emptry.
  A floating weight will hang on the switch when the water tank is empty, thus pressing in the switch.
-  The 10 K ohm resistor has a constant resistance of 10 kilo ohm.
+ - The 10 K ohm resistor has a constant resistance of 10 kilo ohm.
  - The Makeblock 50200 water pump is used to transport the water from a resevoir to it's destination.
  Since this water pump uses 12 VDC and an arduino cannot handle this much power, a relay is used as an on/of switch.
