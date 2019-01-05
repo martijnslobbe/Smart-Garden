@@ -21,7 +21,6 @@ Parts used:
  - Micro switch
  - 10 K ohm resistor
  - Jumper wires
- 
 
 Functions of the components. 
   The FC-28 soil moisture sensor measures the moisture in soil and similar materials. 
@@ -50,7 +49,6 @@ Connections:
   5V              --              NO terminal         (positive power)
   digital 4       --              Com terminal        (data transfer)
   GND             10K resistor    Com terminal        (negative power)
-
 
   Power supply:   Relay:          Water pump:
   12 VDC          K1 NO           Positive terminal   (positive power)
