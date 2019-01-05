@@ -133,8 +133,8 @@ void loop(){
     // if there is less light than necessary and the relay is not already on, then turn it on
     if (LDR_value <= minimum_light_level and bitRead(PORTD, relay_1) != 0) {      // bitRead(PORTD, relay_1) reads out the value off the relay pin
       Serial.print(" \n The light value has changed and is below necessary. Light level: ");
-      Serial.println(LDR_value);                                                   // print out the light value
-      digitalWrite(relay_1, relay_on);                                             // turn on the relay
+      Serial.println(LDR_value);                                                  // print out the light value
+      digitalWrite(relay_1, relay_on);                                            // turn on the relay
       Serial.println("Relay is now ON \n");
     }
 
