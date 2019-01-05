@@ -34,6 +34,7 @@ Functions of the components.
     A floating weight will hang on the switch when the water tank is empty, thus pressing in the switch.
   The 10 K ohm resistor has a constant resistance of 10 kilo ohm.
 
+
 Connections:
   Arduino:        FC-28:
   digital 3       VCC                                 (positive power)
