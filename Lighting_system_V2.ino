@@ -40,9 +40,9 @@ Connections:
   SCL             SCL                             (I2C serial clock signal transfer)
 
   Arduino:        Extra:          Photoresistor:
-  5V                              left_leg        (positive power)
-  GND             10K resistor    right_leg       (negative power)
-  analog 0        --              right_leg       (data transfer)
+  5V              --              left terminal   (positive power)
+  GND             10K resistor    right terminal  (negative power)
+  analog 0        --              right terminal  (data transfer)
 
   Arduino:        Relay:
   5V              VCC                             (positive power)
@@ -67,7 +67,7 @@ DS3231  rtc(SDA, SCL);
 // change the following values to suit your equipment
 const int minimum_light_level = 500;
 const int start_time = 1000;  // 10:00 
-const int end_time = 1800;    // 18:00 
+const int end_time = 1630;    // 18:00 
 
 // I/O pin defenitions
 const int LDRpin = A0; 
@@ -132,7 +132,7 @@ void loop(){
 
     // if there is less light than necessary and the relay is not already on, then turn it on
     if (LDR_value <= minimum_light_level and bitRead(PORTD, relay_1) != 0) {      // bitRead(PORTD, relay_1) reads out the value off the relay pin
-      Serial.print("The light value has changed and is below necessary. Light level: ");
+      Serial.print(" \n The light value has changed and is below necessary. Light level: ");
       Serial.println(LDR_value);                                                   // print out the light value
       digitalWrite(relay_1, relay_on);                                             // turn on the relay
       Serial.println("Relay is now ON \n");
@@ -140,15 +140,14 @@ void loop(){
 
     // if there is more light than necessary and the relay is not already off, then turn it off
     else if (LDR_value > minimum_light_level and bitRead(PORTD, relay_1)!= 1) {   // bitRead(PORTD, relay_1) reads out the value off the relay pi
-      Serial.print("The light value has changed and is above necessary. Light level: ");
+      Serial.print(" \n The light value has changed and is above necessary. Light level: ");
       Serial.println(LDR_value);                                                  // print out the light value
       digitalWrite(relay_1, relay_off);                                           // turn off the relay
       Serial.println("Relay is now OFF \n");
     }
     
-    delay(100); // delay in between readouts
+    delay(1000); // delay in between readouts
   }
 
   delay(5000);  // delay in between readouts
 }
-
