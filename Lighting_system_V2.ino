@@ -19,6 +19,7 @@ Parts used:
  - Photoresistor (Light Dependent Resistor)
  - 4 Channel relay module (2PH63083A)
  - GROW Led Strip (5050 LED Strip DC12V 3:1)
+ - 10 K ohm resistor
  - Jumper wires (male-male & male-female)
  
 Functions of the components. 
@@ -30,6 +31,7 @@ Functions of the components.
     In this project, the relay switches the power to a water pump on or off.
   The GROW Led Strip is a led strip made specific for growing plants. 
     It's 3 red, 1 blue color setup gives off a light that stimulates aplant grow and blooming.
+  The 10 K ohm resistor has a constant resistance of 10 kilo ohm.
  
  
 Connections:
