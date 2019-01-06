@@ -77,7 +77,7 @@ const int relay_1 = 2;
 const int relay_on = 0;
 const int relay_off = 1;
 
-// variables that change
+// global variables
 int LDR_value = 0;    
 int lamp_status = 0;
 int current_time = 0;
