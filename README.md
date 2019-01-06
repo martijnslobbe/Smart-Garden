@@ -6,6 +6,7 @@ Going to include:
 - automatic watering system
 - lighting system
 - ventilation system
+- information request
 
 
 All equipment will be used efficiently, saving its lifespan.
@@ -25,8 +26,7 @@ Components used up until now:
  - Jumper wires
 
 
-
-Functiosn of the components:
+Function of the components:
  - The Arduino Uno is a microcontroller board The Arduino Uno is a microcontroller board based on the ATmega328.
  It has 14 digital - and 6 analog I/O pins. It will act as the brains of this project. The board will controll equipment based on analog and digital inputs from sensors. 
  - The Real Time Clock breakout board is a low-cost, extremely accurate I2C real-time clock (RTC).
