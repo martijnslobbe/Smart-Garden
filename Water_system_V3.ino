@@ -81,7 +81,7 @@ const int water_meter_off = 0;
 const int sufficient_water = 0;
 const int deficient_water = 1;
 
-// variables that change
+// global variables
 int sensor_value = 0;
 int soil = 0;
 int water_level = 0;
