@@ -6,6 +6,7 @@ Going to include:
 - ventilation system
 - build in safety system (temperature etc.)
 - LED and sound feedback 
+- comments
 
 
 All equipment will be used efficiently, saving its lifespan.
