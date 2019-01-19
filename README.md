@@ -3,10 +3,9 @@ Arduino controlled indoor smart-garden / greenhouse.
 
 
 Going to include:
-- Automatic watering system
-- Lighting system
-- Ventilation system
-- Information request
+- ventilation system
+- build in safety system (temperature etc.)
+- LED and sound feedback 
 
 
 All equipment will be used efficiently, saving its lifespan.
