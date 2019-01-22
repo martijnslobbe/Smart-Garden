@@ -14,7 +14,7 @@ Going to include:
 All equipment will be used efficiently, saving its lifespan.
 A RTC breakout board will be used to time control the system.
 
-Feel free to use this code in your projects.
+Feel free to use the code in your projects.
 If you use this code in a tutorial, a reference to my GitHub would be appreciated.
 For information about this code visit my GitHub.
  https://github.com/WesselM
