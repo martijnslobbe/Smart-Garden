@@ -34,21 +34,21 @@ Parts used:
  - Micro switch
 
 Functions of the components. 
-  -The Real Time Clock breakout board is a low-cost, extremely accurate I2C real-time clock (RTC).
+  - The Real Time Clock breakout board is a low-cost, extremely accurate I2C real-time clock (RTC).
     The device incorporates a battery input, and maintains accurate timekeeping when main power to the device is interrupted.
-  -The push button is a mechanism to send inputs to the Arduino. It can be pressed to let current pass through.
+  - The push button is a mechanism to send inputs to the Arduino. It can be pressed to let current pass through.
     In the project, its job is to activate the data request function
-  -The 10 K ohm resistor has a constant resistance of 10 kilo ohm.
-  -The Photoresistor is an electrical component whose resistance is influenced by the amount of light.
+  - The 10 K ohm resistor has a constant resistance of 10 kilo ohm.
+  - The Photoresistor is an electrical component whose resistance is influenced by the amount of light.
     The resistance value of a light_value decreases as the light_value is illuminated more strongly.
-  -The 2PH63083A 4 channel relay module is used to control equipment with high currents. 
+  - The 2PH63083A 4 channel relay module is used to control equipment with high currents. 
     In this project, the relay switches the power to a water pump on or off.
-  -The GROW Led Strip is a led strip made specific for growing plants. 
+  - The GROW Led Strip is a led strip made specific for growing plants. 
     It's 3 red, 1 blue colour setup gives off a light that stimulates a plant grow and blooming.
-  -The FC-28 soil moisture sensor measures the moisture in soil and similar materials. 
+  - The FC-28 soil moisture sensor measures the moisture in soil and similar materials. 
     It acts as a variable resistor.
-  -The Makeblock 50200 water pump is used to transport the water from a reservoir to its destination.
+  - The Makeblock 50200 water pump is used to transport the water from a reservoir to its destination.
     Since this water pump uses 12 VDC and an Arduino cannot handle this much power, a relay is used as an on/off switch.
-  -The micro switch is a switch that let's trough current when it is pressed.
+  - The micro switch is a switch that let's trough current when it is pressed.
     In the project its job is to make sure that nothing happens when the water reservoir is empty.
     A floating weight will hang on the switch when the water tank is empty, thus pressing in the switch.
