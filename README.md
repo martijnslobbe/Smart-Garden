@@ -1,7 +1,7 @@
 # Smart-Garden
     * * * * * * * * * * * * * * * * * *
     *                                 *
-    *    AUTOMATIC LIGHTING SYSTEM    *
+    *    AUTOMATIC SMART GARDEN       *
     *      using an Arduino Uno       *
     *                                 *
     * * * * * * * * * * * * * * * * * *
