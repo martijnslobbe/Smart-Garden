@@ -2,7 +2,7 @@
 
     * * * * * * * * * * * * * * * * * *
     *                                 *
-    *    AUTOMATIC LIGHTING SYSTEM    *
+    *    AUTOMATIC SMART GARDEN       *
     *      using an Arduino Uno       *
     *                                 *
     * * * * * * * * * * * * * * * * * *
@@ -11,7 +11,7 @@ This code was written by Wessel M.
 Last updated on 22-1-2019.
 
 Feel free to use this code in your projects.
-If you use this code in a tutorial, a reference to my GitHub would be appreciated.
+If you use this code in a tutorial, a reference my Github page.
 For information about this code visit my GitHub.
  https://github.com/WesselM
 
@@ -106,8 +106,8 @@ Connections water system:
 // change the following values to suit your equipment
 const int minimum_light_level = 500;                                            // the minimum output that the LDR can give, before the lights turn on
 const int start_time = 1000;                                                    // when the light program has to start 10:00 
-const int end_time = 2000;                                                      // when the light program has to end 20:00 
-const int minimum_water_percentage = 74;                                        // if there is less than this percentage of water, the pump will activate
+const int end_time = 21048;                                                     // when the light program has to end 20:00 
+const int minimum_water_percentage = 72;                                        // if there is less than this percentage of water, the pump will activate
 const int water_amount_time = 5000;                                             // amount of milliseconds water is deposited
 const int watering_delay = 10;                                                  // delay in minutes before the water is checked
 
@@ -185,7 +185,7 @@ void setup() { // put your setup code here, to run once:
 
   // the external interrupt pin, triggers when a change in signal is detected
   // the interrupt function (in this case data_request_switch) will act above all current running programms
-  // in this case if a change current flow on pin 2 occurs, the function data_request_switch is activated
+  // if a change current flow on pin 2 occurs, the function data_request_switch is activated
   attachInterrupt(digitalPinToInterrupt(interrupt_pin), data_request_switch, CHANGE);
 }
 
@@ -199,15 +199,16 @@ void loop() { // put your main code here, to run repeatedly:
   // while it is time to turn on the lights, activate both the main and lighitng functions
   while (start_time < current_time and current_time < end_time) { 
     Serial.println("Light program running");
+    get_RTC_data();
     main_programm();                                                            // call the function main
     lighting();                                                                 // call the function lighting
+    delay(5000);
   }
 
   delay(5000);                                                                  // delay in between execution
 }
 
 void main_programm() { 
-  Serial.println("\n");
   Serial.println("Main program running");
   // if the data_request value is HIGH, than do the following: 
   if (data_request == data_request_on) { 
@@ -215,11 +216,11 @@ void main_programm() {
     data_request = data_request_off;                                            // set data request to be False
   }
 
-  // bitRead(PORTD, relay_lights) reads out the value off the relay pin, if the relay is not already off, then turn off the relay
-  if (bitRead(PORTD, relay_lights)!= relay_off and start_time > current_time and current_time > end_time) { digitalWrite(relay_lights, relay_off); }                                              
+  // check if the relay is not already off and it is not time for light, turn off the relay
+  if (bitRead(PORTD, relay_lights)!= relay_off and start_time > current_time or current_time > end_time) { digitalWrite(relay_lights, relay_off); }                                              
 
-  // bitRead(PORTD, relay_pump) reads out the value off the relay pin, if the relay is not already off, then turn off the relay
-  if (bitRead(PORTD, relay_pump)!= relay_off) { digitalWrite(relay_pump, relay_off); }                                              
+  // check if the waterpump relay is on, if it is, then turn it off
+  if (bitRead(PORTD, relay_pump)!= relay_off) { digitalWrite(relay_pump, relay_off); }                                                                                     
 
   // check if there is enough water, if there is not (current passes through the micro switch), print out a message
   get_water_level();                                                            // call the function get_water_level
@@ -228,6 +229,7 @@ void main_programm() {
   // if the time is devisible by the watering delay and leaves no reminder, then call the watering function
   get_RTC_data();                                                               // call the function get_RTC_data
   if (current_time % watering_delay == 0) { watering(); }                       // call the watering function 
+  Serial.println("\n");
 }
 
 
@@ -250,12 +252,15 @@ void data_request_switch() {
 
 // this function is activated when the data_request is on, gathers the data from sensors and prints out the data
 void data_gathering() { 
+  // print the time and temperature
   get_RTC_data();                                                               // call the get_RTC_data function
   Serial.print("The current time is: ");
   Serial.println(current_time_string);                                          // print out the current time
   Serial.print("The current temperature is: ");
   Serial.println(current_temp);                                                 // print out the current temperature
+  Serial.println("°C");
 
+  // print the soil moisture percentage
   get_soil_moisture();                                                          // call the get_soil_moisture function
   Serial.print("Raw soil moisture sensor output is: ");
   Serial.println(soil_sensor_value);                                            // print out the soil moisture value (200-1024)
@@ -263,10 +268,16 @@ void data_gathering() {
   Serial.print(soil_percentage);                                                // print out the soil moisture percentage (0-100)
   Serial.println("%");
 
+  // print the water level
   get_water_level();                                                            // call the get_water_level function
   if (water_level == sufficient_water) { Serial.println("The water reservoir contains enough water"); }
   if (water_level == deficient_water) { Serial.println("The water reservoir is empty, please refill ASAP! "); } 
- 
+
+  // print whether the light program is running or not
+  if (start_time < current_time and current_time < end_time) { Serial.println("Light programm is running"); }
+  if (start_time > current_time or current_time > end_time) { Serial.println("Light programm is not running"); }
+
+  // print the light value
   light_value = analogRead(LDR_pin);                                            // get the new light value from the LDR
   Serial.print("The current light level is: ");
   Serial.print(light_value);                                                    // print out the light level 
@@ -306,6 +317,7 @@ void watering() {
     digitalWrite(relay_pump, relay_on);                                         // turn the relay on
     delay(water_amount_time);                                                   // wait for a given time period
     digitalWrite(relay_pump, relay_off);                                        // turn the relay off
+    delay(50001);                                                               // delay for 50 sec so that the loop does not run twice a minute 
   }
 }
 
