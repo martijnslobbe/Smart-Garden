@@ -7,8 +7,8 @@
     * * * * * * * * * * * * * * * * * *
 
 Bevat:
-- ventilatie systeem
-- ingebouwd beveilegingssysteem (temperatuur etc.)
+- Ventilatie systeem
+- Ingebouwd beveilegingssysteem (temperatuur etc.)
 - LED en geluid feedback 
 
 Alle apparatuur word zo efficient mogelijk gebruikt, zodat het langer meekan.
