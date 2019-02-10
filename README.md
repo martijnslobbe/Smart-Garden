@@ -6,19 +6,15 @@
     *                                 *
     * * * * * * * * * * * * * * * * * *
 
-Going to include:
-- ventilation system
-- build in safety system (temperature etc.)
-- LED and sound feedback 
+Bevat:
+- ventilatie systeem
+- ingebouwd beveilegingssysteem (temperatuur etc.)
+- LED en geluid feedback 
 
-All equipment will be used efficiently, saving its lifespan.
-A RTC breakout board will be used to time control the system.
+Alle apparatuur word zo efficient mogelijk gebruikt, zodat het langer meekan.
+Voor het time control systeem gebruiken we een RTC breakout board.
 
-Feel free to use the code in your projects.
-If you use this code in a tutorial, a reference to my GitHub would be appreciated.
-
-
-Parts used:
+Gebruikte onderdelen:
  - Arduino Uno (REV 3)
  - Real Time Clock (Adafruit DS3231)
  - 10 K ohm resistor
@@ -26,27 +22,27 @@ Parts used:
  - Photoresistor (Light Dependent Resistor)
  - 4 Channel relay module (2PH63083A)
  - GROW Led Strip (5050 LED Strip DC12V 3:1)
- - Jumper wires (male-male & male-female)
+ - Kabeltjes (male-male & male-female)
  - Soil moisture sensor (FC-28)
- - Water pump (Makeblock 50200)
+ - Water pomp (Makeblock 50200)
  - Micro switch
 
-Functions of the components. 
-  - The Real Time Clock breakout board is a low-cost, extremely accurate I2C real-time clock (RTC).
-    The device incorporates a battery input, and maintains accurate timekeeping when main power to the device is interrupted.
-  - The push button is a mechanism to send inputs to the Arduino. It can be pressed to let current pass through.
-    In the project, its job is to activate the data request function
-  - The 10 K ohm resistor has a constant resistance of 10 kilo ohm.
-  - The Photoresistor is an electrical component whose resistance is influenced by the amount of light.
-    The resistance value of a light_value decreases as the light_value is illuminated more strongly.
-  - The 2PH63083A 4 channel relay module is used to control equipment with high currents. 
-    In this project, the relay switches the power to a water pump on or off.
-  - The GROW Led Strip is a led strip made specific for growing plants. 
-    It's 3 red, 1 blue colour setup gives off a light that stimulates a plant grow and blooming.
-  - The FC-28 soil moisture sensor measures the moisture in soil and similar materials. 
-    It acts as a variable resistor.
-  - The Makeblock 50200 water pump is used to transport the water from a reservoir to its destination.
-    Since this water pump uses 12 VDC and an Arduino cannot handle this much power, a relay is used as an on/off switch.
-  - The micro switch is a switch that let's trough current when it is pressed.
-    In the project its job is to make sure that nothing happens when the water reservoir is empty.
-    A floating weight will hang on the switch when the water tank is empty, thus pressing in the switch.
+Functies van de verschillende onderdelen. 
+  - De Real Time Clock breakout board is een accurate I2C real-time clock (RTC).
+    Het apparaat heeft een batterij input, en houdt de tijd bij wanneer de stroomtoevoer naar het apparaat onderbroken wordt.
+  - De push button is een mechanisme om input te verzenden naar de Arduino. Als je erop drukt wordt er stroom doorgelaten.
+    De taak van de push button is om de data request functie te activeren.
+  - De 10 K ohm resistor heeft een constante weerstand van 10 kilo ohm.
+  - De Photoresistor is een onderdeel, waarvan de weerstand bepaald wordt door de hoeveelheid licht.
+    De resistance value van een light_value verminderd als de light_value sterker belicht wordt.
+  - De 2PH63083A 4 channel relay module wordt gebruikt om de apparatuur met hoge stroomtoevoer te controleren.
+    De relay zet in dit project de stroom naar de waterpomp aan of uit.
+  - De GROW Led Strip is een led strip speciaal gemaakt voor het gebruik bij groeinde planten.
+    Door de speciale 3 rode en 1 blauwe kleur setup in de led strip wordt de groei van de planten gestimuleerd.
+  - Om de vochtigheid van de grond te bepalen gebruiken we de FC-28 soil moisture sensor.
+    Het werkt als een variable resistor. 
+  - Het watertransport van het reservoir naar de desbetreffende bestemming wordt geregeld door de Makeblock50200 water pump.
+    Aangezien de waterpomp 12 VDC gebruikt en de Arduino dat niet aankan, gebruiken we een relay als een aan en uit knop.
+  - De micro switch is een switch die stroom doorlaat wanneer hij ingedrukt wordt.
+    Het is de bedoeling dat de micro switch ervoor zorgt dat er niets gebeurd wanneer het water reservoir leeg is.
+    Als de watertank leeg is hangt er een gewichtje aan de switch, waardoor die ingedrukt wordt.
